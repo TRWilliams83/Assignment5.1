@@ -1,0 +1,74 @@
+<!--- Timothy Ryan Williams -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    
+    <!--- added for assignment 1.3-->
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+<!--- main info goes in here-->
+<body>
+    <!--- Add header and H1 tag for each .html-->
+    <header>
+        <h1>Strings Page</h1>
+    </header>
+    <nav>
+        <!--- added for each html from class-->
+        <h2>Page List</h2>
+        <a href="./menu.html">Menu</a><br>
+        <a href="./index.html">Home</a><br>
+        <a href="./boards.html">Boards</a><br>
+        <a href="./game.html">Game</a><br>
+        <a href="./strings.html">Stings</a><br>
+            
+        </nav>    
+
+    <div class="h2">
+        <!--- little user experience -->
+        <h2 id="wizardSpin" onclick="changeText()">Spin the Wizard!</h2>
+        <!--- just local script to change text.-->
+        <!--<script> 
+            function changeText() {
+                var wiz = document.getElementById("wizardSpin");
+                /// this wizard is annoying
+                wiz.textContent = "but can you stop him";
+            }
+        </script> -->
+    </div>
+
+    <!--- made a box for the buttons -->
+    <div class="buttons">
+
+        <!--- button to start meme rotate-->
+
+        <button id="start">Start</button>
+        <!--- button to stop meme rotate-->
+        <button id="stop">Stop</button>
+        
+    </div>
+        <!--- paragraph -->
+    <div class="meme1">
+        
+        <!--- Gandolf the Gray-->
+        <!--- had to add id here for 4.1 -->
+        <img id="meme" src="Meme1.png">
+        </p>
+    </div>
+    <script src="index.js"></script>
+    <!--- adding some audio-->
+    <audio id="space" src="us1.mp3" preload="auto"></audio>
+        <!--- Assignment 5.1 requiremnt for final-->
+    <footer>
+        <p>Timothy Ryan Williams<br>
+        University of Advancing Technology<br>
+        2625 W. Baseline Road<br>
+        Tempe, AZ 85283<br></p>
+    </footer>
+</body>
+
+</html>

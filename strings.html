@@ -1,0 +1,161 @@
+<!--- Timothy Ryan Williams-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--- Assignment 3.1-->
+    <title>Strings</title>
+    <!--- Linking that stylesheet-->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+        <!--- Add header and H1 tag for each .html-->
+        <header>
+            <h1>Strings Page</h1>
+        </header>
+        <nav>
+            <!--- added for each html from class-->
+            <h2>Page List</h2>
+            <a href="./menu.html">Menu</a><br>
+            <a href="./index.html">Home</a><br>
+            <a href="./boards.html">Boards</a><br>
+            <a href="./game.html">Game</a><br>
+            <a href="./strings.html">Stings</a><br>
+            
+        </nav>
+
+<!--     <script>
+        function checkPalindrome(string) {
+            /// const from lecture used as starting point
+            /// splits the string, reverses it and compares it to the original input
+            const stringValue = string.split('');
+            const reverseStringValues = stringValue.slice().reverse();
+            const joinedString = reverseStringValues.join('');
+            /// if the newly made string (reverse) is = to the original input it returns true
+            if (string === joinedString) {
+                return true;
+            } else {
+            /// if the newly made string does not it returns false    
+                return false;
+            }
+        }
+        
+        let continueChecking = true;
+        
+        while (continueChecking) {
+            const string = prompt("Enter a string:");
+        
+            if (string === null) {
+                /// Cancel ='s false and will end loop'
+                continueChecking = false;
+            } else {
+                /// Continues to function
+                if (checkPalindrome(string)) {
+                    /// If string is True alert notifies 
+                    alert("This '" + string + "' is a palindrome.");
+                } else {
+                    /// If string is False alert notifies 
+                    alert("This '" + string + "' is not a palindrome.");
+                }
+                
+                const choice = confirm("Do you want to check another word?");
+                /// represents the user's choice, Ok represents true and reloops to the start, Cancel represents false and ends the cycle
+                if (!choice) {
+                    continueChecking = false;
+                }
+            }
+        }
+        </script> -->
+
+        <!--- Had to redo the script because I could not figure out the form with that method ( need to plan ahead next time )-->
+        <!--- New container for Assignment 3.2-->
+        <div class="combineNames">
+            <!--- palindrome check for full name-->
+            <h4>Check Your Name</h4>
+            <!--- create form with first, last and zip-->
+            <form id="combineNames">
+                <!--- two text boxes, a number and submit for requirements. -->
+                <input type="text" id="firstName" placeholder="Enter first name">
+                <input type="text" id="lastName" placeholder="Enter last name">
+                <input type="number" id="zipCode" placeholder="Enter zip code">
+                <button type="submit">Check</button>
+            </form>
+            <p id="data"></p>
+        </div>
+        <!--- Java function to check input from form above-->
+        <script>
+            /// Function for first + last combination, also check lenght 
+            function combineNames(firstName, lastName) {
+                /// remove any blank spaces
+                const fullName = firstName.trim() + " " + lastName.trim();
+                /// if rule to end program if name is longer than 20 characters. 
+                if (fullName.length > 20) {
+                    /// alerts user of the following
+                    alert("name is too long. make shorter entry.");
+                    return null;
+                }
+                /// if passes if statement and under 20 char's will return the full combined name.
+                return fullName;
+            }
+    
+            /// Function for zip code
+            function validateZip(zipCode) {
+                /// validates string with a max digit of 5.
+                const zipVal = /^\d{5}$/;
+                /// tests condition
+                if (!zipVal.test(zipCode)) {
+                    /// if false get error message
+                    alert("Error enter 5-digit code");
+                    return false;
+                }
+                /// if true return zip
+                return true;
+            }
+    
+            /// form submission function 
+            document.getElementById("combineNames").addEventListener("submit", function(event) {
+                /// stops blank submission
+                event.preventDefault();
+                /// recall input data from above
+                const firstName = document.getElementById("firstName").value;
+                const lastName = document.getElementById("lastName").value;
+                const zipCode = document.getElementById("zipCode").value;
+                /// lets fullName = combineNames (once combined become full)
+                const fullName = combineNames(firstName, lastName);
+                /// if full name passes check, check zip code
+                if (!fullName) {
+                    return; 
+                }
+                /// checks if zip passes 
+                if (!validateZip(zipCode)) {
+                    return;
+                }
+    
+                /// const stringValue = string.split('');
+                /// const string = fullName.toLowerCase().replace(/\s/g, ''); 
+                /// const reverseStringValues = string.split('').reverse().join(''); 
+                /// const reverseStringValues = stringValue.slice().reverse();
+                /// const isPalindrome = string === reverseString; 
+
+                
+                /// splits the string, reverses it and compares it to the original input ( Could not get the one from earlier to work ho)
+
+                /// const joinedString = reverseStringValues.join('');
+    
+                /// if is palindrome get secret message
+                if (isPalindrome) {
+                    document.getElementById("result").textContent = "Secret Squirrel!! You are a'" + fullName + "'palindrome.";
+
+                /// if you are not a palindrome     
+                } else {
+                    document.getElementById("result").textContent = fullName + "'is not a palindrome.";
+                }
+            });
+        </script>
+
+
+
+</body>
+</html>
